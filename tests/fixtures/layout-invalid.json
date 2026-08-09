@@ -1,0 +1,8 @@
+{
+  "page": {"width": 1280, "height": 720},
+  "visuals": [
+    {"name": "sales", "x": 24, "y": 104, "width": 400, "height": 200},
+    {"name": "margin", "x": 300, "y": 150, "width": 400, "height": 200},
+    {"name": "detail", "x": 24, "y": 650, "width": 1300, "height": 100}
+  ]
+}

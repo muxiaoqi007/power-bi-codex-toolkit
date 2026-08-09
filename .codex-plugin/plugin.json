@@ -1,0 +1,30 @@
+{
+  "name": "power-bi-codex-toolkit",
+  "version": "0.1.0",
+  "description": "Codex skills and validation tools for agentic Power BI report development.",
+  "author": {
+    "name": "muxiaoqi007",
+    "email": "muxiaoqi007@users.noreply.github.com",
+    "url": "https://github.com/muxiaoqi007"
+  },
+  "homepage": "https://github.com/muxiaoqi007/power-bi-codex-toolkit#readme",
+  "repository": "https://github.com/muxiaoqi007/power-bi-codex-toolkit",
+  "license": "MIT",
+  "keywords": ["power-bi", "codex", "skills", "business-intelligence", "agentic-ai"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Power BI Codex Toolkit",
+    "shortDescription": "Build and review decision-focused Power BI reports.",
+    "longDescription": "An extensible toolkit of Codex Skills, references, assets, and validation tools for agentic Power BI report development.",
+    "developerName": "muxiaoqi007",
+    "category": "Productivity",
+    "capabilities": ["Write"],
+    "websiteURL": "https://github.com/muxiaoqi007/power-bi-codex-toolkit",
+    "defaultPrompt": [
+      "Design a decision-focused retail Power BI dashboard.",
+      "Review this Power BI report for layout and KPI issues.",
+      "Plan a Power BI report from my business questions."
+    ],
+    "brandColor": "#2563EB"
+  }
+}

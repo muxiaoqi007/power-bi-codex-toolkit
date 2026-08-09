@@ -6,6 +6,8 @@ The first included Skill, `create-retail-report`, designs, builds, redesigns, an
 
 The repository is intended to grow into a broader toolkit covering report design, industry-specific reporting workflows, PBIR authoring and validation, themes, reusable page patterns, and custom visuals.
 
+It is packaged as a Codex plugin: the root `.codex-plugin/plugin.json` discovers every Skill under `skills/`.
+
 ## Current capabilities
 
 - Executive retail dashboards
@@ -20,6 +22,7 @@ The repository is intended to grow into a broader toolkit covering report design
 ## Repository structure
 
 ```text
+.codex-plugin/plugin.json
 skills/create-retail-report/
 ├── SKILL.md
 ├── agents/openai.yaml
@@ -47,6 +50,8 @@ cp -R power-bi-codex-toolkit/skills/create-retail-report ~/.codex/skills/
 ```
 
 Restart Codex after installation so the Skill is discovered.
+
+The repository can also be consumed as a Codex plugin by environments that support installation from a Git repository. The plugin manifest discovers all current and future Skills under `skills/`.
 
 ## Use
 
@@ -100,6 +105,14 @@ uv run --with pyyaml python \
   skills/create-retail-report
 ```
 
+Validate the whole repository before contributing:
+
+```bash
+python -m pip install -r requirements-dev.txt
+python scripts/validate_repository.py
+python -m unittest discover -s tests -v
+```
+
 ## Design principles
 
 - Optimize for decisions, not chart count.
@@ -112,3 +125,13 @@ uv run --with pyyaml python \
 ## License
 
 MIT License. See [LICENSE](LICENSE).
+
+## Roadmap
+
+- General Power BI report-design Skill
+- PBIR structure and layout validation
+- Reusable executive, store, inventory, and product page patterns
+- Industry-specific reporting Skills beyond retail
+- Custom visual and theme tooling
+
+Contributions are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md).
