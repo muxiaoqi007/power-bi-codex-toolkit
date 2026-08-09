@@ -1,10 +1,12 @@
-# Create Retail Report for Codex
+# Power BI Codex Toolkit
 
-A Codex Skill for designing, building, redesigning, and reviewing decision-focused retail Power BI report frontends.
+An extensible collection of Codex Skills, references, assets, and validation tools for agentic Power BI report development.
 
-It turns business questions into an approved design brief, selects governed retail KPIs, maps each page to a purposeful layout, and applies structural and visual quality gates before delivery.
+The first included Skill, `create-retail-report`, designs, builds, redesigns, and reviews decision-focused retail Power BI report frontends. It turns business questions into an approved design brief, selects governed retail KPIs, maps each page to a purposeful layout, and applies structural and visual quality gates before delivery.
 
-## What it covers
+The repository is intended to grow into a broader toolkit covering report design, industry-specific reporting workflows, PBIR authoring and validation, themes, reusable page patterns, and custom visuals.
+
+## Current capabilities
 
 - Executive retail dashboards
 - Store and regional performance
@@ -32,14 +34,16 @@ skills/create-retail-report/
 
 `SKILL.md` contains the main workflow. Detailed domain knowledge is loaded progressively from `references/`, deterministic layout checks live in `scripts/`, and reusable report styling lives in `assets/`.
 
+Additional Skills can be added under `skills/` without changing the installation model.
+
 ## Install
 
 Clone the repository and copy the Skill into the Codex skills directory:
 
 ```bash
-git clone https://github.com/YOUR-USER/codex-retail-report.git
+git clone https://github.com/muxiaoqi007/power-bi-codex-toolkit.git
 mkdir -p ~/.codex/skills
-cp -R codex-retail-report/skills/create-retail-report ~/.codex/skills/
+cp -R power-bi-codex-toolkit/skills/create-retail-report ~/.codex/skills/
 ```
 
 Restart Codex after installation so the Skill is discovered.
