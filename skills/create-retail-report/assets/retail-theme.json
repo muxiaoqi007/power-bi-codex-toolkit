@@ -1,0 +1,19 @@
+{
+  "name": "Retail Neutral",
+  "dataColors": ["#2563EB", "#14B8A6", "#F59E0B", "#7C3AED", "#64748B", "#DC2626"],
+  "background": "#F8FAFC",
+  "foreground": "#0F172A",
+  "tableAccent": "#2563EB",
+  "good": "#15803D",
+  "neutral": "#64748B",
+  "bad": "#B91C1C",
+  "minimum": "#E2E8F0",
+  "center": "#F59E0B",
+  "maximum": "#2563EB",
+  "textClasses": {
+    "title": {"fontFace": "Segoe UI Semibold", "fontSize": 16, "color": "#0F172A"},
+    "header": {"fontFace": "Segoe UI Semibold", "fontSize": 12, "color": "#334155"},
+    "label": {"fontFace": "Segoe UI", "fontSize": 10, "color": "#475569"},
+    "callout": {"fontFace": "Segoe UI Semibold", "fontSize": 28, "color": "#0F172A"}
+  }
+}

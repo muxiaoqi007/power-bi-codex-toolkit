@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create Retail Report"
+  short_description: "Design and build decision-focused retail Power BI reports"
+  default_prompt: "Use $create-retail-report to design a retail Power BI report from my business questions and data model."
