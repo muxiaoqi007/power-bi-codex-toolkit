@@ -1,0 +1,22 @@
+{
+  "page": {"width": 1280, "height": 720, "margin": 24, "gap": 16, "header_height": 64},
+  "title_name": "overview-title",
+  "rows": [
+    {
+      "height": 112,
+      "columns": [
+        {"name": "revenue", "span": 3},
+        {"name": "margin", "span": 3},
+        {"name": "orders", "span": 3},
+        {"name": "customers", "span": 3}
+      ]
+    },
+    {
+      "height": 260,
+      "columns": [
+        {"name": "trend", "span": 8},
+        {"name": "breakdown", "span": 4}
+      ]
+    }
+  ]
+}

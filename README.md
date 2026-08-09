@@ -2,7 +2,7 @@
 
 An extensible collection of Codex Skills, references, assets, and validation tools for agentic Power BI report development.
 
-The first included Skill, `create-retail-report`, designs, builds, redesigns, and reviews decision-focused retail Power BI report frontends. It turns business questions into an approved design brief, selects governed retail KPIs, maps each page to a purposeful layout, and applies structural and visual quality gates before delivery.
+The toolkit currently includes a general Power BI report-design Skill and a retail-specialized Skill. They turn business questions into approved design contracts, map each page to a purposeful layout, and apply structural and visual quality gates before delivery.
 
 The repository is intended to grow into a broader toolkit covering report design, industry-specific reporting workflows, PBIR authoring and validation, themes, reusable page patterns, and custom visuals.
 
@@ -10,6 +10,9 @@ It is packaged as a Codex plugin: the root `.codex-plugin/plugin.json` discovers
 
 ## Current capabilities
 
+- General Power BI report architecture and page design
+- Deterministic 12-column page-grid generation
+- Chart selection and reusable report design-system guidance
 - Executive retail dashboards
 - Store and regional performance
 - Sales, growth, and margin analysis
@@ -23,6 +26,15 @@ It is packaged as a Codex plugin: the root `.codex-plugin/plugin.json` discovers
 
 ```text
 .codex-plugin/plugin.json
+skills/design-power-bi-report/
+├── SKILL.md
+├── agents/openai.yaml
+├── assets/power-bi-neutral-theme.json
+├── references/
+│   ├── chart-selection.md
+│   ├── design-contract.md
+│   └── design-system.md
+└── scripts/generate_grid.py
 skills/create-retail-report/
 ├── SKILL.md
 ├── agents/openai.yaml
@@ -46,7 +58,7 @@ Clone the repository and copy the Skill into the Codex skills directory:
 ```bash
 git clone https://github.com/muxiaoqi007/power-bi-codex-toolkit.git
 mkdir -p ~/.codex/skills
-cp -R power-bi-codex-toolkit/skills/create-retail-report ~/.codex/skills/
+cp -R power-bi-codex-toolkit/skills/* ~/.codex/skills/
 ```
 
 Restart Codex after installation so the Skill is discovered.
@@ -58,6 +70,8 @@ The repository can also be consumed as a Codex plugin by environments that suppo
 Invoke it explicitly:
 
 ```text
+$design-power-bi-report Turn my business questions and semantic model into a Power BI report design.
+
 $create-retail-report Design an executive retail dashboard for weekly trading performance.
 ```
 
@@ -71,7 +85,19 @@ $create-retail-report Review this PBIR report for layout, KPI context, interacti
 $create-retail-report Design an inventory-health page for stockout, overstock, and aged-stock decisions.
 ```
 
-The Skill can also trigger implicitly for relevant retail Power BI report requests.
+The Skills can also trigger implicitly for relevant Power BI report requests.
+
+## Generate a page grid
+
+The general design Skill includes a deterministic 12-column grid generator. Define rows and column spans, then generate exact visual rectangles:
+
+```bash
+python3 skills/design-power-bi-report/scripts/generate_grid.py \
+  tests/fixtures/grid-spec.json \
+  --output layout.json
+```
+
+The resulting layout can be checked with the retail layout validator or adapted into PBIR visual positions.
 
 ## Layout validation
 
@@ -128,7 +154,6 @@ MIT License. See [LICENSE](LICENSE).
 
 ## Roadmap
 
-- General Power BI report-design Skill
 - PBIR structure and layout validation
 - Reusable executive, store, inventory, and product page patterns
 - Industry-specific reporting Skills beyond retail

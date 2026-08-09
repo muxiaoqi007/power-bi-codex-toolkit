@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design Power BI Report"
+  short_description: "Design decision-focused Power BI report frontends"
+  default_prompt: "Use $design-power-bi-report to turn my business questions and semantic model into a Power BI report design."
