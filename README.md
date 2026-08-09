@@ -2,7 +2,7 @@
 
 An extensible collection of Codex Skills, references, assets, and validation tools for agentic Power BI report development.
 
-The toolkit currently includes a general Power BI report-design Skill and a retail-specialized Skill. They turn business questions into approved design contracts, map each page to a purposeful layout, and apply structural and visual quality gates before delivery.
+The toolkit currently includes general report design, retail-specialized design, and static PBIR inspection. It turns business questions into approved designs and checks report files before deeper schema or rendered validation.
 
 The repository is intended to grow into a broader toolkit covering report design, industry-specific reporting workflows, PBIR authoring and validation, themes, reusable page patterns, and custom visuals.
 
@@ -13,6 +13,8 @@ It is packaged as a Codex plugin: the root `.codex-plugin/plugin.json` discovers
 - General Power BI report architecture and page design
 - Deterministic 12-column page-grid generation
 - Chart selection and reusable report design-system guidance
+- Read-only PBIR structure and page-layout inspection
+- Page-order, identifier, visual bounds, and overlap diagnostics
 - Executive retail dashboards
 - Store and regional performance
 - Sales, growth, and margin analysis
@@ -35,6 +37,13 @@ skills/design-power-bi-report/
 │   ├── design-contract.md
 │   └── design-system.md
 └── scripts/generate_grid.py
+skills/inspect-pbir-report/
+├── SKILL.md
+├── agents/openai.yaml
+├── references/
+│   ├── pbir-structure.md
+│   └── review-output.md
+└── scripts/inspect_pbir.py
 skills/create-retail-report/
 ├── SKILL.md
 ├── agents/openai.yaml
@@ -72,6 +81,8 @@ Invoke it explicitly:
 ```text
 $design-power-bi-report Turn my business questions and semantic model into a Power BI report design.
 
+$inspect-pbir-report Inspect this PBIR project for structural and layout problems.
+
 $create-retail-report Design an executive retail dashboard for weekly trading performance.
 ```
 
@@ -98,6 +109,17 @@ python3 skills/design-power-bi-report/scripts/generate_grid.py \
 ```
 
 The resulting layout can be checked with the retail layout validator or adapted into PBIR visual positions.
+
+## Inspect a PBIR project
+
+Run the zero-dependency, read-only static inspector on a project directory, `.pbip` file, or `.Report` folder:
+
+```bash
+python3 skills/inspect-pbir-report/scripts/inspect_pbir.py path/to/project
+python3 skills/inspect-pbir-report/scripts/inspect_pbir.py path/to/project --json
+```
+
+The inspector checks local structure, JSON syntax, page references, identifiers, visual bounds, and overlap. It does not replace `pbir validate --all` or rendered-page inspection.
 
 ## Layout validation
 
@@ -154,7 +176,7 @@ MIT License. See [LICENSE](LICENSE).
 
 ## Roadmap
 
-- PBIR structure and layout validation
+- Deeper PBIR schema and field-reference validation
 - Reusable executive, store, inventory, and product page patterns
 - Industry-specific reporting Skills beyond retail
 - Custom visual and theme tooling

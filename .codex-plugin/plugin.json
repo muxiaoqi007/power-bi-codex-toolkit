@@ -1,6 +1,6 @@
 {
   "name": "power-bi-codex-toolkit",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Codex skills and validation tools for agentic Power BI report development.",
   "author": {
     "name": "muxiaoqi007",
@@ -22,7 +22,7 @@
     "websiteURL": "https://github.com/muxiaoqi007/power-bi-codex-toolkit",
     "defaultPrompt": [
       "Design a decision-focused Power BI report from my business questions.",
-      "Review this Power BI report for layout and KPI issues.",
+      "Inspect this PBIR project for structural and layout problems.",
       "Design a decision-focused retail Power BI dashboard."
     ],
     "brandColor": "#2563EB"

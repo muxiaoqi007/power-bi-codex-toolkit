@@ -1,0 +1,4 @@
+interface:
+  display_name: "Inspect PBIR Report"
+  short_description: "Inspect Power BI PBIR structure and page layouts"
+  default_prompt: "Use $inspect-pbir-report to inspect this PBIR project and report structural and layout problems."
